@@ -5,17 +5,20 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
+
     public GameObject explosionFire;
     public GameObject explosionSmoke;
+    private Score scoreObject;
+
     public int hitPoints;
     public int scorePoints;
     private int hits = 0;
-    private Score scoreObject;
+    
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        scoreObject = GameObject.Find("MainManager").GetComponent<Score>();
+        scoreObject = GameObject.Find("ScoreManager").GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class Enemy : MonoBehaviour
         OnGetDeadlyHit();
     }
 
-    public virtual void MoveOn()
+    public void MoveOn()
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime, Space.World);
     }

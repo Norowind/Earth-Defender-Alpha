@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
     private float maxSpawnTime = 5.0f;
 
     public GameObject[] asteroids;
+
     // Start is called before the first frame update
     void Start()
     {

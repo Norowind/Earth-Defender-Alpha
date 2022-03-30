@@ -5,29 +5,37 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float timBetweenShotsDefault;
+    public float bulletSpeedDefault;
+    public float bulletSpeedBooster;
+
     private float horizontalInput;
     private float verticalInput;
     private float horizontalBorder = 66.0f;
     private float verticalBorderBottom = -8.0f;
     private float verticalBorderTop = 60.0f;
+
     public GameObject[] bullet;
     private GameObject leftGun;
     private GameObject rightGun;
     public GameObject explosionFire;
     public GameObject explosionSmoke;
-    public float timBetweenShotsDefault;
-    public float bulletSpeedDefault;
+    public GameObject gameManager;
+    private GameManager gameManagerScript;
+
     private bool canShoot;
-    public float bulletSpeedBooster;
-    private bool isDead;
+    public bool isDead;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManagerScript = gameManager.GetComponent<GameManager>();
+
         isDead = false; 
 
         leftGun = GameObject.Find("LeftGun");
         rightGun = GameObject.Find("RightGun");
+
         canShoot = true;
     }
 
@@ -81,10 +89,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            isDead = true;
+            gameManagerScript.gameOver = true;
+
             Instantiate(explosionSmoke, transform.position, gameObject.transform.rotation);
             Instantiate(explosionFire, transform.position, gameObject.transform.rotation);
-            isDead = true;
+
+            Destroy(gameObject);
         }
     }
 }//end of class
