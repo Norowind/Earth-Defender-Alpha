@@ -1,7 +1,8 @@
 # Earth-Defender-Alpha
 Scripts from my learning space shooter game
 
-- This is a small game developing in order to learn Unity game engine and C#. 
+- This is a small project developed in order to learn Unity game engine and C#.
+- Work still in progress; 
 
 - Nearest future. Mystery force appears somewhere near planet of Mars. This force sending endless flow of the asteroids towards the Earth.
 - You are playing as a United Earth Space Force (UESF) pilot. 
