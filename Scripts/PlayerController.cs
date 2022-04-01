@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gameManager;
     private GameManager gameManagerScript;
 
-    private bool canShoot;
+    public bool canShoot;
     public bool isDead;
 
     // Start is called before the first frame update
@@ -46,8 +46,11 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-        transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+        if (!gameManagerScript.gameOver)
+        {
+            transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+        }
 
         //Set borders for the player
         if (transform.position.x > horizontalBorder)
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Player shooting
-        if (Input.GetKey(KeyCode.Space) && canShoot)
+        if (Input.GetKey(KeyCode.Space) && canShoot && !gameManagerScript.gameOver)
         {
             StartCoroutine(Shoot());
         }
