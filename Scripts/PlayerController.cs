@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     public float bulletSpeedDefault;
     public float bulletSpeedBooster;
 
-    private float horizontalInput;
-    private float verticalInput;
+    private float horizontalInput, verticalInput;
     private float horizontalBorder = 66.0f;
     private float verticalBorderBottom = -8.0f;
     private float verticalBorderTop = 60.0f;
@@ -48,8 +47,8 @@ public class PlayerController : MonoBehaviour
 
         if (!gameManagerScript.gameOver)
         {
-            transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
-            transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
+            transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime, Space.World);
         }
 
         //Set borders for the player
