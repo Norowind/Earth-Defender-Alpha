@@ -1,0 +1,26 @@
+18th of May, 2022
+
+Alright, so russian invasion of Ukraine put my way of the game designer and coder on-hold. 
+I was I was working on some code-not related jobs in order to provide my family, and was not really in a mood or in 
+a good fit to keep learning. But now the situation is a bit more stable now and I have some free time along the weekends,
+so let us be brave (or foolish :) enough to make some road-map for myself in order to finish my first real game. 
+
+At this moment the core game play is done, but there are still a lot of things to do in order to make it playeble. Even though the
+game by itself is quite simple. So here is a todo list: 
+
+MVP
+- Better UI;
+- Sound FX;
+- Main menu (Art + UI functional aka "New Game", "Credits");
+- Intro (video);
+- Difficulty progress mechanic;
+- Refactoring asteroid spawn mechanic, make it impossible to overlap with each other;
+- Win conditions;
+
+Additional stuff
+- Refactoring for the shooting system and asteroids;
+- New background art;
+- Audio lines for the Assistant and plot development (I have some ideas here, it will note change game much, justy tinny little things for myself :) )
+- Additional weapon aka Ultimate
+
+
