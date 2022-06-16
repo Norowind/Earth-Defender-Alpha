@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JetRotation : MonoBehaviour
 {
+    private float rotationSpeed = 10.0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +18,7 @@ public class JetRotation : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * 10.0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
     }
 }

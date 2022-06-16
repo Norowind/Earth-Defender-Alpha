@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Player shooting
-        if (Input.GetKey(KeyCode.Space) && canShoot && !gameManagerScript.gameOver)
+        if (Input.GetKey(KeyCode.Mouse0) && canShoot && !gameManagerScript.gameOver)
         {
             StartCoroutine(Shoot());
         }

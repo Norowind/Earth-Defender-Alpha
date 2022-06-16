@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("RESET");
             ResetScene();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("ESC pressed");
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void ShowGameOverText()
