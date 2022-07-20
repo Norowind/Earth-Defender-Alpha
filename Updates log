@@ -11,7 +11,7 @@ game by itself is quite simple. So here is a todo list:
 MVP
 - Better UI;
 - Sound FX;
-- Main menu (Art + UI functional aka "New Game", "Credits");
+- Main menu (Art + UI aka "New Game", "Credits");
 - Intro (video);
 - Difficulty progress mechanic;
 - Refactoring asteroid spawn mechanic, make it impossible to overlap with each other;
